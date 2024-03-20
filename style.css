@@ -1,46 +1,72 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
-}
-
-h1 {
+  }
+  
+  h1 {
     text-align: center;
     color: #333;
-}
-
-.board {
+  }
+  
+  .board {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-gap: 10px;
+    grid-template-columns: repeat(3, 100px); /* 3 columns */
+    grid-template-rows: repeat(3, 100px); /* 3 rows to ensure cells are square */
+    gap: 4px; /* gap between cells */
+    background-color: #6b6b6b;
     margin-bottom: 20px;
-}
-
-button {
+  }
+  
+  .cell {
     background-color: #ffffff;
     border: 2px solid #ddd;
     font-size: 24px;
     font-weight: bold;
     color: #555;
-    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
-}
-
-button:hover {
+  }
+  
+  .cell:hover {
+    background-color: #eee; /* Hover effect for cells */
+  }
+  
+  .cell:focus {
+    outline: none; /* Removes the focus outline */
+    transform: scale(1.05); /* Slightly enlarges the cell on focus */
+  }
+  
+  button {
+    background-color: #ffffff;
+    border: 2px solid #ddd;
+    font-size: 24px;
+    font-weight: bold;
+    color: #555;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  button:hover {
     background-color: #eee;
-}
-
-button:focus {
+  }
+  
+  button:focus {
     outline: none;
     transform: scale(1.05);
-}
-
-form {
+  }
+  
+  form {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+  }
+  
