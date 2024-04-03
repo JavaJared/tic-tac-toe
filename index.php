@@ -33,20 +33,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['move'])) {
     <meta charset="UTF-8">
     <title>Tic Tac Toe Game</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rakkas&family=Spicy+Rice&display=swap" rel="stylesheet">
 </head>
 <body>
 <?php if (!isset($_SESSION['gameMode'])): ?>
-        <h1>Welcome to Tic Tac Toe!</h1>
+        <h1>Tic-Tac-Tactics: Master the Grid!</h1>
         <form method="POST" action="index.php">
-            <button type="submit" name="gameMode" value="singleplayer">Singleplayer</button>
-            <button type="submit" name="gameMode" value="multiplayer">Multiplayer</button>
+            <button class="option" type="submit" name="gameMode" value="singleplayer">Singleplayer</button>
+            <button class="option" type="submit" name="gameMode" value="multiplayer">Multiplayer</button>
         </form>
     <?php else: ?>
-        <h1>Tic Tac Toe Game</h1>
+        <h1>Tic Tac Toe</h1>
         <form method="POST" action="index.php">
             <?php echo renderBoard();
             if (!isset($_SESSION['gameOver']) || !$_SESSION['gameOver']) {
-                echo '<button type="submit" name="reset" value="reset">Restart Game</button>';
+                echo '<button class="restart" type="submit" name="reset" value="reset">Restart Game</button>';
             }
             renderGameOverMessage(); ?>
             

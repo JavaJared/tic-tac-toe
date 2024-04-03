@@ -175,7 +175,7 @@ function renderGameOverMessage() {
 
         // Display the "New Game" button
         echo '<form method="POST" action="index.php">';
-        echo '<button type="submit" name="reset" value="reset">New Game</button>';
+        echo '<button class="restart" type="submit" name="reset" value="reset">New Game</button>';
         echo '</form>';
 
         // Clear the game over message
